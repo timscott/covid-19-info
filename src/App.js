@@ -1,7 +1,21 @@
 /* global fetch */
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import styled, {createGlobalStyle} from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+`;
+
+const Container = styled.div`
+  margin: 20px;
+`;
 
 const App = () => {
   const [message, setMessage] = useState('...loading')
@@ -19,24 +33,12 @@ const App = () => {
   })
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <Container>
+      <GlobalStyle />
+      <header>
         <p>{message}</p>
-        <p>Change me!</p>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
-    </div>
+    </Container>
   );
 }
 
