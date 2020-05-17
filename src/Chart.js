@@ -87,8 +87,8 @@ const Chart = ({showCapacity}) => {
     <div>
       <h2>{fields[fieldName][fieldScope].name} - {states[state].name}</h2>
       <LineChart
-        width={600}
-        height={600}
+        width={1000}
+        height={1000}
         data={timeSeries}
         margin={{top: 20, right: 20, bottom: 100, left: 20}}
       >
