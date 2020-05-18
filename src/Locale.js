@@ -92,12 +92,14 @@ const Locale = () => {
           state={state}
           resource="ICUBed"
           data={timeSeries}
+          totalCapacity={data.actuals.ICUBeds.capacity}
           showCapacity={showCapacity}
         />
         <Chart
           state={state}
           resource="ventilator"
           data={timeSeries}
+          totalCapacity={timeSeries[0].ventilatorCapacity}
           showCapacity={showCapacity}
         />
       </ChartsContainer>

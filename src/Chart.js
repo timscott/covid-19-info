@@ -21,11 +21,9 @@ const ChartContainer = styled.div`
   text-align: center;
 `;
 
-const Chart = ({resource, state, data, showCapacity}) => {
+const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
   const fieldScope = 'InUse'
   const dataKey = `${resource}s${fieldScope}`;
-  debugger
-  const totalCapacity = data[0][`${resource}Capacity`];
   const yValues = data.map(row => row[dataKey]);
   if (showCapacity) {
     yValues.push(totalCapacity);
