@@ -1,157 +1,157 @@
 export default {
-  AL: {
+  al: {
       name: 'Alabama'
   },
-  AK: {
+  ak: {
       name: 'Alaska'
   },
-  AZ: {
+  az: {
       name: 'Arizona'
   },
-  AR: {
+  ar: {
       name: 'Arkansas'
   },
-  CA: {
+  ca: {
       name: 'California'
   },
-  CO: {
+  co: {
       name: 'Colorado'
   },
-  CT: {
+  ct: {
       name: 'Connecticut'
   },
-  DE: {
+  de: {
       name: 'Delaware'
   },
-  DC: {
+  dc: {
       name: 'District Of Columbia'
   },
-  FL: {
+  fl: {
       name: 'Florida'
   },
-  GA: {
+  ga: {
       name: 'Georgia',
       reopeningBegan: '2020-04-24'
   },
-  HI: {
+  hi: {
       name: 'Hawaii'
   },
-  ID: {
+  id: {
       name: 'Idaho'
   },
-  IL: {
+  il: {
       name: 'Illinois'
   },
-  IN: {
+  in: {
       name: 'Indiana'
   },
-  IA: {
+  ia: {
       name: 'Iowa'
   },
-  KS: {
+  ks: {
       name: 'Kansas'
   },
-  KY: {
+  ky: {
       name: 'Kentucky'
   },
-  LA: {
+  la: {
       name: 'Louisiana'
   },
-  ME: {
+  me: {
       name: 'Maine'
   },
-  MD: {
+  md: {
       name: 'Maryland'
   },
-  MA: {
+  ma: {
       name: 'Massachusetts'
   },
-  MI: {
+  mi: {
       name: 'Michigan'
   },
-  MN: {
+  mn: {
       name: 'Minnesota'
   },
-  MS: {
+  ms: {
       name: 'Mississippi'
   },
-  MO: {
+  mo: {
       name: 'Missouri'
   },
-  MT: {
+  mt: {
       name: 'Montana'
   },
-  NE: {
+  ne: {
       name: 'Nebraska'
   },
-  NV: {
+  nv: {
       name: 'Nevada'
   },
-  NH: {
+  nh: {
       name: 'New Hampshire'
   },
-  NJ: {
+  nj: {
       name: 'New Jersey'
   },
-  NM: {
+  nm: {
       name: 'New Mexico'
   },
-  NY: {
+  ny: {
       name: 'New York'
   },
-  NC: {
+  nc: {
       name: 'North Carolina'
   },
-  ND: {
+  nd: {
       name: 'North Dakota'
   },
-  OH: {
+  oh: {
       name: 'Ohio'
   },
-  OK: {
+  ok: {
       name: 'Oklahoma'
   },
-  OR: {
+  or: {
       name: 'Oregon'
   },
-  PA: {
+  pa: {
       name: 'Pennsylvania'
   },
-  RI: {
+  ri: {
       name: 'Rhode Island'
   },
-  SC: {
+  sc: {
       name: 'South Carolina'
   },
-  SD: {
+  sd: {
       name: 'South Dakota'
   },
-  TN: {
+  tn: {
       name: 'Tennessee'
   },
-  TX: {
+  tx: {
       name: 'Texas',
       reopeningBegan: '2020-05-04'
   },
-  UT: {
+  ut: {
       name: 'Utah'
   },
-  VT: {
+  vt: {
       name: 'Vermont'
   },
-  VA: {
+  va: {
       name: 'Virginia'
   },
-  WA: {
+  wa: {
       name: 'Washington'
   },
-  WV: {
+  wv: {
       name: 'West Virginia'
   },
-  WI: {
+  wi: {
       name: 'Wisconsin'
   },
-  WY: {
+  wy: {
       name: 'Wyoming'
   }
 };

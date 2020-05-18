@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components'
-import Chart from './Chart';
+import Locale from './Locale';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 const GlobalStyle = createGlobalStyle`
@@ -25,7 +25,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route path="/:state">
-            <Chart />
+            <Locale />
           </Route>
           <Route>
             Not Found
