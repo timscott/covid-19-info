@@ -75,7 +75,6 @@ const Locale = () => {
 
   return (
     <>
-      <Menu />
       <h1>{states[state].name}</h1>
       <SettingsContainer>
         <label>

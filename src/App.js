@@ -2,6 +2,7 @@ import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components'
 import Locale from './Locale';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Menu from './Menu';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -23,12 +24,10 @@ const App = () => {
     <Container>
       <GlobalStyle />
       <Router>
+        <Menu />
         <Switch>
           <Route path="/:state">
             <Locale />
-          </Route>
-          <Route>
-            Not Found
           </Route>
         </Switch>
       </Router>
