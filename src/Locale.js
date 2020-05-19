@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import {DateTime} from 'luxon';
 import {useParams, useLocation, useHistory} from 'react-router-dom';
 import states from './states';
-import Menu from './Menu';
 import Chart from './Chart';
 
 const SettingsContainer = styled.div`
