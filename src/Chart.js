@@ -1,6 +1,6 @@
 import React from 'react';
-import {LineChart, Line, YAxis, XAxis, Label, ReferenceLine} from 'recharts';
-import {DateTime} from 'luxon';
+import {LineChart, Line, YAxis, XAxis, ReferenceLine} from 'recharts';
+import {DateTime, Duration} from 'luxon';
 import styled from 'styled-components';
 import states from './states';
 
@@ -21,14 +21,20 @@ const ChartContainer = styled.div`
   text-align: center;
 `;
 
+const MaxDataGridContainer = styled.div`
+  /* text-align: left; */
+`;
+
 const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
   const fieldScope = 'InUse'
   const dataKey = `${resource}s${fieldScope}`;
   const yValues = data.map(row => row[dataKey]);
-  if (showCapacity) {
-    yValues.push(totalCapacity);
-  }
   const maxY = Math.max(...yValues);
+  const maxYOn = DateTime.fromISO([...data].reverse().find(row => row[dataKey] === maxY).date);
+  const maxYScale = showCapacity ? Math.max(maxY, totalCapacity) : maxY;
+  const maxYAgo = maxYOn.diff(DateTime.local());
+  const maxYDaysAgo = Math.floor(-maxYAgo.as('days'));
+  const formatter = new Intl.NumberFormat('en-US');
 
   const {reopeningBegan} = states[state];
 
@@ -39,7 +45,7 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
         width={700}
         height={700}
         data={data}
-        margin={{top: 20, right: 20, bottom: 100, left: 20}}
+        margin={{top: 20, right: 20, bottom: 20, left: 20}}
       >
         {showCapacity &&
           <ReferenceLine
@@ -78,14 +84,16 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
           stroke="#8884d8"
           strokeWidth={4}
         />
-        <YAxis domain={[0, Math.ceil((maxY * 1.1)/100) * 100]} />
+        <YAxis domain={[0, Math.ceil((maxYScale * 1.1)/100) * 100]} />
         <XAxis
           dataKey="date"
           tickFormatter={value => DateTime.fromISO(value).toFormat('M/d')}
         >
-          <Label value="Date" position="bottom" offset={20} />
         </XAxis>
       </LineChart>
+      <MaxDataGridContainer>
+        Peak at <strong>{formatter.format(maxY)}</strong> on <strong>{maxYOn.toFormat('M/d')}</strong> ({formatter.format(maxYDaysAgo)} days ago)
+      </MaxDataGridContainer>
     </ChartContainer>
   );
 };
