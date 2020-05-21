@@ -56,7 +56,7 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
             label={({viewBox: {x, y, width, height}, offset}) => {
               return (
                 <text x={width/2} y={y} dy={-10} >
-                  total capacity
+                  total capacity ({formatter.format(totalCapacity)})
                 </text>
               );
             }}
