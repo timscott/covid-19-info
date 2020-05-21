@@ -1,6 +1,6 @@
 import React from 'react';
 import {LineChart, Line, YAxis, XAxis, ReferenceLine} from 'recharts';
-import {DateTime, Duration} from 'luxon';
+import {DateTime} from 'luxon';
 import styled from 'styled-components';
 import states from './states';
 
