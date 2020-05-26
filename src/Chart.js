@@ -31,6 +31,7 @@ const MaxDataGridContainer = styled.div`
 
 const Footnotes = styled.div`
   margin-top: 20px;
+  margin-left: 10px;
   align-self: left;
 `;
 
