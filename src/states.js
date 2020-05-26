@@ -1,24 +1,31 @@
 export default {
   al: {
-      name: 'Alabama'
+      name: 'Alabama',
+      reopeningBegan: '2020-04-30'
   },
   ak: {
-      name: 'Alaska'
+      name: 'Alaska',
+      reopeningBegan: '2020-04-24'
   },
   az: {
-      name: 'Arizona'
+      name: 'Arizona',
+      reopeningBegan: '2020-05-15'
   },
   ar: {
-      name: 'Arkansas'
+      name: 'Arkansas',
+      reopeningBegan: '2020-05-06'
   },
   ca: {
-      name: 'California'
+      name: 'California',
+      reopeningBegan: '2020-04-26'
   },
   co: {
-      name: 'Colorado'
+      name: 'Colorado',
+      reopeningBegan: '2020-04-26'
   },
   ct: {
-      name: 'Connecticut'
+      name: 'Connecticut',
+      reopeningBegan: '2020-05-20'
   },
   de: {
       name: 'Delaware'
@@ -27,65 +34,83 @@ export default {
       name: 'District Of Columbia'
   },
   fl: {
-      name: 'Florida'
+      name: 'Florida',
+      reopeningBegan: '2020-05-04'
   },
   ga: {
       name: 'Georgia',
       reopeningBegan: '2020-04-24'
   },
   hi: {
-      name: 'Hawaii'
+      name: 'Hawaii',
+      reopeningBegan: '2020-05-07'
   },
   id: {
-      name: 'Idaho'
+      name: 'Idaho',
+      reopeningBegan: '2020-05-01'
   },
   il: {
       name: 'Illinois'
   },
   in: {
-      name: 'Indiana'
+      name: 'Indiana',
+      reopeningBegan: '2020-05-04'
   },
   ia: {
-      name: 'Iowa'
+      name: 'Iowa',
+      reopeningBegan: '2020-05-01'
   },
   ks: {
-      name: 'Kansas'
+      name: 'Kansas',
+      reopeningBegan: '2020-05-03'
   },
   ky: {
-      name: 'Kentucky'
+      name: 'Kentucky',
+      reopeningBegan: '2020-05-20'
   },
   la: {
-      name: 'Louisiana'
+      name: 'Louisiana',
+      reopeningBegan: '2020-05-15'
   },
   me: {
-      name: 'Maine'
+      name: 'Maine',
+      reopeningBegan: '2020-05-20'
   },
   md: {
-      name: 'Maryland'
+      name: 'Maryland',
+      reopeningBegan: '2020-05-15'
   },
   ma: {
-      name: 'Massachusetts'
+      name: 'Massachusetts',
+      reopeningBegan: '2020-05-18'
   },
   mi: {
-      name: 'Michigan'
+      name: 'Michigan',
+      reopeningBegan: '2020-05-20'
   },
   mn: {
-      name: 'Minnesota'
+      name: 'Minnesota',
+      reopeningBegan: '2020-05-17'
   },
   ms: {
-      name: 'Mississippi'
+      name: 'Mississippi',
+      reopeningBegan: '2020-04-27'
   },
   mo: {
-      name: 'Missouri'
+      name: 'Missouri',
+      reopeningBegan: '2020-05-03'
   },
   mt: {
-      name: 'Montana'
+      name: 'Montana',
+      reopeningBegan: '2020-04-26'
   },
   ne: {
-      name: 'Nebraska'
+      name: 'Nebraska',
+      reopeningBegan: '2020-05-04'
   },
   nv: {
-      name: 'Nevada'
+      name: 'Nevada',
+      reopeningBegan: '2020-05-09'
   },
   nh: {
       name: 'New Hampshire'
@@ -100,16 +125,19 @@ export default {
       name: 'New York'
   },
   nc: {
-      name: 'North Carolina'
+      name: 'North Carolina',
+      reopeningBegan: '2020-05-08'
   },
   nd: {
-      name: 'North Dakota'
+      name: 'North Dakota',
+      reopeningBegan: '2020-05-01'
   },
   oh: {
       name: 'Ohio'
   },
   ok: {
-      name: 'Oklahoma'
+      name: 'Oklahoma',
+      reopeningBegan: '2020-04-24'
   },
   or: {
       name: 'Oregon'
@@ -118,26 +146,32 @@ export default {
       name: 'Pennsylvania'
   },
   ri: {
-      name: 'Rhode Island'
+      name: 'Rhode Island',
+      reopeningBegan: '2020-05-08'
   },
   sc: {
-      name: 'South Carolina'
+      name: 'South Carolina',
+      reopeningBegan: '2020-04-20'
   },
   sd: {
-      name: 'South Dakota'
+      name: 'South Dakota',
+      reopeningBegan: '2020-04-28'
   },
   tn: {
-      name: 'Tennessee'
+      name: 'Tennessee',
+      reopeningBegan: '2020-04-27'
   },
   tx: {
       name: 'Texas',
       reopeningBegan: '2020-05-04'
   },
   ut: {
-      name: 'Utah'
+      name: 'Utah',
+      reopeningBegan: '2020-05-01'
   },
   vt: {
-      name: 'Vermont'
+      name: 'Vermont',
+      reopeningBegan: '2020-05-15'
   },
   va: {
       name: 'Virginia'
@@ -146,12 +180,15 @@ export default {
       name: 'Washington'
   },
   wv: {
-      name: 'West Virginia'
+      name: 'West Virginia',
+      reopeningBegan: '2020-05-03'
   },
   wi: {
-      name: 'Wisconsin'
+      name: 'Wisconsin',
+      reopeningBegan: '2020-05-13'
   },
   wy: {
-      name: 'Wyoming'
+      name: 'Wyoming',
+      reopeningBegan: '2020-05-01'
   }
 };

@@ -17,12 +17,21 @@ const fields = {
   }
 };
 
-const ChartContainer = styled.div`
+const Title = styled.h2`
   text-align: center;
 `;
 
+const ChartContainer = styled.div`
+
+`;
+
 const MaxDataGridContainer = styled.div`
-  /* text-align: left; */
+  text-align: center;
+`;
+
+const Footnotes = styled.div`
+  margin-top: 20px;
+  align-self: left;
 `;
 
 const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
@@ -40,7 +49,7 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
 
   return (
     <ChartContainer>
-      <h2>{fields[resource][fieldScope].name}</h2>
+      <Title>{fields[resource][fieldScope].name} ‡</Title>
       <LineChart
         width={700}
         height={700}
@@ -71,7 +80,7 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
             label={({viewBox: {x, y, width, height}, offset}) => {
               return (
                 <text x={x} y={y + height/2} style={{writingMode: 'tb'}} dx={20} >
-                  reopening begins
+                  reopening begins †
                 </text>
               );
             }}
@@ -94,6 +103,10 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
       <MaxDataGridContainer>
         Peak at <strong>{formatter.format(maxY)}</strong> on <strong>{maxYOn.toFormat('M/d')}</strong> ({formatter.format(maxYDaysAgo)} days ago)
       </MaxDataGridContainer>
+      <Footnotes>
+        <div>‡ source: <a href="https://covidactnow.org/">COVID ActNow</a></div>
+        <div>† source: <a href="https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html">The New York Times</a></div>
+      </Footnotes>
     </ChartContainer>
   );
 };

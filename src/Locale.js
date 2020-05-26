@@ -39,7 +39,7 @@ const Locale = () => {
   useEffect(() => {
     setError();
     setLoading(true);
-    fetch(`https://data.covidactnow.org/snapshot/296/us/states/${state.toUpperCase()}.NO_INTERVENTION.timeseries.json`)
+    fetch(`https://data.covidactnow.org/snapshot/360/us/states/${state.toUpperCase()}.OBSERVED_INTERVENTION.timeseries.json`)
     .then(response => {
       return response.json();
     })
@@ -67,10 +67,17 @@ const Locale = () => {
     })
   };
 
+  // const lastUpdated = DateTime.fromISO(data.lastUpdatedDate);
   const timeSeries = data.timeseries
   .filter(({date}) => {
-    return DateTime.fromISO(date) <= DateTime.local();
+    return DateTime.fromISO(date) <= DateTime.local(); // lastUpdated;
   });
+
+  // const timeSeriesForecast = data.timeseries
+  // .filter(({date}) => {
+  //   const d = DateTime.fromISO(date);
+  //   return d > lastUpdated && d <= DateTime.local();
+  // });
 
   return (
     <>
