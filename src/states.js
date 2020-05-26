@@ -163,7 +163,7 @@ export default {
   },
   tx: {
       name: 'Texas',
-      reopeningBegan: '2020-05-04'
+      reopeningBegan: '2020-04-30'
   },
   ut: {
       name: 'Utah',
