@@ -80,7 +80,7 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
             label={({viewBox: {x, y, width, height}, offset}) => {
               return (
                 <text x={x} y={y + height/2} style={{writingMode: 'tb'}} dx={20} >
-                  reopening begins †
+                  reopening begins *
                 </text>
               );
             }}
@@ -104,8 +104,8 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
         Peak at <strong>{formatter.format(maxY)}</strong> on <strong>{maxYOn.toFormat('M/d')}</strong> ({formatter.format(maxYDaysAgo)} days ago)
       </MaxDataGridContainer>
       <Footnotes>
-        <div>‡ source: <a href="https://covidactnow.org/">COVID ActNow</a></div>
-        <div>† source: <a href="https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html">The New York Times</a></div>
+        <div>‡ source: <a href="https://covidactnow.org/" target="blank">COVID ActNow</a></div>
+        <div>* source: <a href="https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html" target="blank">The New York Times</a></div>
       </Footnotes>
     </ChartContainer>
   );
