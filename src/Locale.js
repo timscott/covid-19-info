@@ -6,6 +6,10 @@ import {useParams, useLocation, useHistory} from 'react-router-dom';
 import states from './states';
 import Chart from './Chart';
 
+const {
+  API_VERSION = '438'
+} = process.env;
+
 const SettingsContainer = styled.div`
   margin-top: 20px;
 `;
@@ -39,7 +43,7 @@ const Locale = () => {
   useEffect(() => {
     setError();
     setLoading(true);
-    fetch(`https://data.covidactnow.org/snapshot/360/us/states/${state.toUpperCase()}.OBSERVED_INTERVENTION.timeseries.json`)
+    fetch(`https://data.covidactnow.org/snapshot/${API_VERSION}/us/states/${state.toUpperCase()}.OBSERVED_INTERVENTION.timeseries.json`)
     .then(response => {
       return response.json();
     })
