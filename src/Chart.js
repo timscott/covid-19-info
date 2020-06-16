@@ -35,7 +35,7 @@ const Footnotes = styled.div`
   align-self: left;
 `;
 
-const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
+const Chart = ({resource, state, data, totalCapacity, showCapacity, lastUpdated}) => {
   const fieldScope = 'InUse'
   const dataKey = `${resource}s${fieldScope}`;
   const yValues = data.map(row => row[dataKey]);
@@ -44,7 +44,8 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
   const maxYScale = showCapacity ? Math.max(maxY, totalCapacity) : maxY;
   const maxYAgo = maxYOn.diff(DateTime.local());
   const maxYDaysAgo = Math.floor(-maxYAgo.as('days'));
-  const formatter = new Intl.NumberFormat('en-US');
+
+  const formatter = (options = {}) => new Intl.NumberFormat('en-US', options);
 
   const {reopeningBegan} = states[state];
 
@@ -66,7 +67,7 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
             label={({viewBox: {x, y, width, height}, offset}) => {
               return (
                 <text x={width/2} y={y} dy={-10} >
-                  total capacity ({formatter.format(totalCapacity)})
+                  total capacity ({formatter().format(totalCapacity)})
                 </text>
               );
             }}
@@ -87,6 +88,21 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
             }}
           />
         }
+        {lastUpdated &&
+          <ReferenceLine
+          x={lastUpdated.toFormat('yyyy-MM-dd')}
+          stroke="#02a4d3"
+          strokeWidth={1}
+          strokeDasharray="5,3"
+          label={({viewBox: {x, y, width, height}, offset}) => {
+            return (
+              <text x={x} y={y + height/2} style={{writingMode: 'tb'}} dx={20} >
+                last updated **
+              </text>
+            );
+          }}
+        />
+        }
         <Line
           dot={false}
           type="monotone"
@@ -102,11 +118,12 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity}) => {
         </XAxis>
       </LineChart>
       <MaxDataGridContainer>
-        Peak at <strong>{formatter.format(maxY)}</strong> on <strong>{maxYOn.toFormat('M/d')}</strong> ({formatter.format(maxYDaysAgo)} days ago)
+        Peak at <strong>{formatter().format(maxY)}</strong> on <strong>{maxYOn.toFormat('M/d')}</strong> ({formatter().format(maxYDaysAgo)} days ago, {formatter({style: 'percent', maximumFractionDigits: 0}).format(maxY/totalCapacity)} capacity)
       </MaxDataGridContainer>
       <Footnotes>
         <div>‡ source: <a href="https://covidactnow.org/" target="blank">COVID ActNow</a></div>
         <div>* source: <a href="https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html" target="blank">The New York Times</a></div>
+        <div>** values after this date are projected</div>
       </Footnotes>
     </ChartContainer>
   );

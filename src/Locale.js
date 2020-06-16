@@ -71,7 +71,7 @@ const Locale = () => {
     })
   };
 
-  // const lastUpdated = DateTime.fromISO(data.lastUpdatedDate);
+  const lastUpdated = DateTime.fromISO(data.lastUpdatedDate);
   const timeSeries = data.timeseries
   .filter(({date}) => {
     return DateTime.fromISO(date) <= DateTime.local(); // lastUpdated;
@@ -102,6 +102,7 @@ const Locale = () => {
           resource="ICUBed"
           data={timeSeries}
           totalCapacity={data.actuals.ICUBeds.capacity}
+          lastUpdated={lastUpdated}
           showCapacity={showCapacity}
         />
         <Chart
@@ -109,6 +110,7 @@ const Locale = () => {
           resource="ventilator"
           data={timeSeries}
           totalCapacity={timeSeries[0].ventilatorCapacity}
+          lastUpdated={lastUpdated}
           showCapacity={showCapacity}
         />
       </ChartsContainer>
