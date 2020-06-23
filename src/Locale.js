@@ -7,7 +7,7 @@ import states from './states';
 import Chart from './Chart';
 
 const {
-  API_VERSION = '464'
+  API_VERSION = '540'
 } = process.env;
 
 const SettingsContainer = styled.div`
