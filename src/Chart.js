@@ -90,19 +90,32 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity, lastUpdated}
         }
         {lastUpdated &&
           <ReferenceLine
-          x={lastUpdated.toFormat('yyyy-MM-dd')}
-          stroke="#02a4d3"
+            x={lastUpdated.toFormat('yyyy-MM-dd')}
+            stroke="#02a4d3"
+            strokeWidth={1}
+            strokeDasharray="5,3"
+            label={({viewBox: {x, y, width, height}, offset}) => {
+              return (
+                <text x={x} y={y + height/2} style={{writingMode: 'tb'}} dx={20} >
+                  last updated ***
+                </text>
+              );
+            }}
+          />
+        }
+        <ReferenceLine
+          x="2020-05-26"
+          stroke="#aaa"
           strokeWidth={1}
           strokeDasharray="5,3"
           label={({viewBox: {x, y, width, height}, offset}) => {
             return (
               <text x={x} y={y + height/2} style={{writingMode: 'tb'}} dx={20} >
-                last updated **
+                protests begin **
               </text>
             );
           }}
         />
-        }
         <Line
           dot={false}
           type="monotone"
@@ -123,7 +136,8 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity, lastUpdated}
       <Footnotes>
         <div>‡ source: <a href="https://covidactnow.org/" target="blank">COVID ActNow</a></div>
         <div>* source: <a href="https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html" target="blank">The New York Times</a></div>
-        <div>** values after this date are projected</div>
+        <div>** source <a href="https://en.wikipedia.org/wiki/George_Floyd_protests">Wikipedia</a></div>
+        <div>*** values after this date are projected</div>
       </Footnotes>
     </ChartContainer>
   );
