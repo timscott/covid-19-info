@@ -136,7 +136,7 @@ const Chart = ({resource, state, data, totalCapacity, showCapacity, lastUpdated}
       <Footnotes>
         <div>‡ source: <a href="https://covidactnow.org/" target="blank">COVID ActNow</a></div>
         <div>* source: <a href="https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html" target="blank">The New York Times</a></div>
-        <div>** source <a href="https://en.wikipedia.org/wiki/George_Floyd_protests">Wikipedia</a></div>
+        <div>** source <a href="https://en.wikipedia.org/wiki/George_Floyd_protests" target="blank">Wikipedia</a></div>
         <div>*** values after this date are projected</div>
       </Footnotes>
     </ChartContainer>
