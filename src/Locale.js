@@ -7,7 +7,7 @@ import states from './states';
 import Chart from './Chart';
 
 const {
-  API_VERSION = '601'
+  REACT_APP_API_VERSION: API_VERSION = '601'
 } = process.env;
 
 const SettingsContainer = styled.div`
