@@ -6,7 +6,7 @@
   "dependencies": {
     "@nivo/line": "^0.61.1",
     "inflection": "^1.12.0",
-    "luxon": "^1.24.1",
+    "luxon": "^1.28.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
